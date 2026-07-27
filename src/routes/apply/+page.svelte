@@ -1,7 +1,6 @@
 <script>
 	import { lang, pickFactory } from '$lib/i18n.js';
 	import { site } from '$lib/site.js';
-	import { parks } from '$lib/data/parks.js';
 	let t = $derived(pickFactory($lang));
 </script>
 
@@ -27,16 +26,7 @@
 				<input id="a-email" name="email" type="email" required />
 				<label for="a-phone">{t('Phone', 'Teléfono')}</label>
 				<input id="a-phone" name="phone" />
-				<label for="a-park">{t('Which community?', '¿Qué comunidad?')}</label>
-				<select id="a-park" name="park">
-					{#each parks as p}<option>{p.name}</option>{/each}
-					<option>{t('Any / not sure', 'Cualquiera / no sé')}</option>
-				</select>
-				<label for="a-people">{t('Who will live in the home?', '¿Quiénes vivirán en la casa?')}</label>
-				<input id="a-people" name="household" placeholder={t('e.g. 2 adults, 2 kids', 'ej. 2 adultos, 2 niños')} />
-				<label for="a-income">{t('Monthly income (approximate)', 'Ingreso mensual (aproximado)')}</label>
-				<input id="a-income" name="income" />
-				<label for="a-notes">{t('Anything else we should know?', '¿Algo más que debamos saber?')}</label>
+				<label for="a-notes">{t('Anything you want us to know? (optional)', '¿Algo que quiera contarnos? (opcional)')}</label>
 				<textarea id="a-notes" name="notes"></textarea>
 				<p style="margin-top:1rem"><button class="btn" type="submit">{t('Send application', 'Enviar solicitud')}</button></p>
 			</form>
@@ -45,8 +35,8 @@
 				<p>
 					{t('Email your application to', 'Envíe su solicitud por correo a')}
 					<a href="mailto:{site.email}?subject=[APPLICATION]">{site.email}</a>
-					{t('with your name, phone, which community, who will live in the home, and monthly income.',
-						'con su nombre, teléfono, comunidad de interés, quiénes vivirán en la casa e ingreso mensual.')}
+					{t('with your name and phone number, and we will follow up with next steps.',
+						'con su nombre y número de teléfono, y le responderemos con los siguientes pasos.')}
 				</p>
 			</div>
 		{/if}
