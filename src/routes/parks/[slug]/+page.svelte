@@ -15,7 +15,7 @@
 	<title>{park.name} Mobile Home Community — {park.town} | AC Investment Properties</title>
 	<meta
 		name="description"
-		content="{park.name} manufactured home community in {park.town}. Lot rent {park.lotRent}. See available homes and community news."
+		content="{park.name} manufactured home community in {park.town}. See available homes and community news."
 	/>
 </svelte:head>
 
@@ -24,7 +24,7 @@
 		<p class="eyebrow">{park.town}</p>
 		<h1>{park.name}</h1>
 		<p>{park.blurb[$lang] ?? park.blurb.en}</p>
-		<p><strong>{t('Lot rent', 'Renta de lote')}:</strong> {park.lotRent}</p>
+		<p><strong>{t('Lot rent', 'Renta de lote')}:</strong> {park.lotRent[$lang] ?? park.lotRent.en}</p>
 
 		<h2 class="board">{t('Homes available here', 'Casas disponibles aquí')}</h2>
 		{#if open.length === 0}
