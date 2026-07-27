@@ -10,30 +10,33 @@
 	<title>Mobile Homes for Rent in Gaston County, NC — AC Investment Properties</title>
 	<meta
 		name="description"
-		content="Affordable manufactured homes for rent in four family-run communities near Belmont and Gastonia, NC. See available homes and apply online."
+		content="Homes for rent in four communities near Belmont and Gastonia, NC. See current rentals and apply online."
 	/>
 </svelte:head>
 
-<!-- HERO: navy sky over the roofline — the signature at full size -->
 <section class="hero">
 	<div class="wrap herogrid">
 		<div>
-			<p class="eyebrow light">Gaston County, North Carolina</p>
-			<h1>{t('A place to call home.', 'Un lugar para llamar hogar.')}</h1>
+			<p class="eyebrow">Gaston County, North Carolina</p>
+			<h1>
+				{t('Homes for rent in Gaston County.',
+					'Casas en renta en el condado de Gaston.')}
+			</h1>
 			<p class="lede">
-				{t(
-					'Four family-run manufactured home communities with affordable rents and neighbors who wave back.',
-					'Cuatro comunidades familiares de casas móviles con rentas accesibles y vecinos que saludan.'
-				)}
+				{t('Four welcoming communities near Belmont and Gastonia. See current rentals and apply online.',
+					'Cuatro comunidades acogedoras cerca de Belmont y Gastonia. Vea las rentas disponibles y solicite en línea.')}
 			</p>
 			<p>
-				<a class="btn gold" href="/homes">{t('See available homes', 'Ver casas disponibles')}</a>
-				<a class="btn ghost" href="/apply">{t('Apply now', 'Solicitar ahora')}</a>
+				<a class="btn" href="/homes">{t('See available homes', 'Ver casas disponibles')}</a>
+				<a class="btn gold" href="/apply" style="margin-left:0.55rem">{t('Apply', 'Solicitar')}</a>
 			</p>
 		</div>
-		<img class="herologo" src="/ac-logo-dark.png" alt="" />
+		<img class="herologo" src="/ac-logo.png" alt="" />
 	</div>
-	<div class="roofline" aria-hidden="true"></div>
+	<svg class="swoosh" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+		<path d="M0 22 C340 54 620 2 1200 40" fill="none" stroke="#14509e" stroke-width="10" stroke-linecap="round" />
+		<path d="M0 40 C360 70 660 20 1200 54" fill="none" stroke="#24262a" stroke-width="5" stroke-linecap="round" opacity="0.85" />
+	</svg>
 </section>
 
 <section>
@@ -66,33 +69,16 @@
 </section>
 
 <style>
-	.hero {
-		background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 70%);
-		color: #fff;
-		padding: 3.6rem 0 0;
-	}
+	.hero { background: linear-gradient(175deg, var(--sky) 0%, var(--paper) 90%); padding: 3.2rem 0 0; }
 	.herogrid {
 		display: grid;
 		grid-template-columns: 1fr auto;
 		align-items: center;
 		gap: 2rem;
-		padding-bottom: 2.6rem;
+		padding-bottom: 1.6rem;
 	}
-	.herologo { height: 10rem; width: auto; opacity: 0.95; }
-	@media (max-width: 44rem) { .herologo { display: none; } }
-	.eyebrow.light { color: #9fd3e2; }
-	.lede { font-size: 1.2rem; max-width: 34rem; color: #e6ecf5; }
-	.btn.ghost {
-		background: transparent;
-		border: 2px solid #fff;
-		margin-left: 0.6rem;
-	}
-	.btn.ghost:hover { background: rgba(255, 255, 255, 0.14); }
-	/* the roofline: cloud-colored roofs rising into the navy sky */
-	.roofline {
-		height: 3.2rem;
-		background: var(--cloud);
-		clip-path: var(--roof);
-	}
+	.herologo { height: 12rem; width: auto; }
+	@media (max-width: 46rem) { .herologo { display: none; } }
+	.lede { font-size: 1.18rem; max-width: 34rem; color: var(--muted); }
 	.listing, .card { text-decoration: none; color: inherit; display: block; }
 </style>

@@ -33,19 +33,26 @@
 	{@render children()}
 </main>
 
+<svg class="swoosh" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+	<path d="M0 34 C300 6 560 58 1200 18" fill="none" stroke="#14509e" stroke-width="10" stroke-linecap="round" />
+	<path d="M0 52 C320 26 600 74 1200 36" fill="none" stroke="#24262a" stroke-width="5" stroke-linecap="round" opacity="0.85" />
+</svg>
+
 <footer>
 	<div class="wrap footgrid">
 		<div>
-			<img class="footlogo" src="/ac-logo-dark.png" alt="" />
+			<img class="footlogo" src="/ac-logo.png" alt="" />
 			<p>
-				{t('Manufactured home communities in Gaston County, NC.',
-					'Comunidades de casas móviles en el condado de Gaston, NC.')}
+				{t('Family-owned communities in Gaston County, NC.',
+					'Comunidades familiares en el condado de Gaston, NC.')}
 			</p>
 		</div>
-		<div>
-			<a href="mailto:{site.email}">{site.email}</a><br />
-			<a href="/apply">{t('Apply for a home', 'Solicitar una casa')}</a><br />
+		<div class="footlinks">
+			<a href="mailto:{site.email}">{site.email}</a>
+			<a href="/apply">{t('Rental application', 'Solicitud de renta')}</a>
 			<a href="/maintenance">{t('Maintenance requests', 'Solicitudes de mantenimiento')}</a>
+			<a href="/news">{t('Community news', 'Avisos de la comunidad')}</a>
+			<a href="/privacy">{t('Privacy', 'Privacidad')}</a>
 		</div>
 	</div>
 	<div class="wrap tiny">© {year} {site.name}</div>
@@ -58,12 +65,12 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
-		padding-top: 0.6rem;
-		padding-bottom: 0.6rem;
+		padding-top: 0.55rem;
+		padding-bottom: 0.55rem;
 		flex-wrap: wrap;
 	}
-	.brand img { height: 3.4rem; width: auto; display: block; }
-	.links { display: flex; align-items: center; gap: 1.05rem; flex-wrap: wrap; }
+	.brand img { height: 3.6rem; width: auto; display: block; }
+	.links { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
 	.links a { text-decoration: none; font-weight: 600; color: var(--ink); }
 	.links a:hover { color: var(--navy); }
 	.langbtn {
@@ -72,17 +79,21 @@
 		background: transparent;
 		border: 2px solid var(--navy);
 		color: var(--navy);
-		border-radius: 0.4rem;
-		padding: 0.15rem 0.6rem;
+		border-radius: 2rem;
+		padding: 0.15rem 0.7rem;
 		cursor: pointer;
 	}
 	.langbtn:hover { background: var(--navy); color: #fff; }
-	.footlogo { height: 3rem; width: auto; margin-bottom: 0.5rem; }
+	.swoosh { margin-top: 2rem; }
+	.footlogo { height: 3.4rem; width: auto; margin-bottom: 0.4rem; }
 	.footgrid {
 		display: grid;
 		gap: 1.5rem;
 		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-		padding: 2rem 1.25rem 0.5rem;
+		padding: 2rem 1.4rem 0.5rem;
 	}
-	.tiny { padding-bottom: 1.5rem; font-size: 0.85rem; opacity: 0.75; }
+	.footlinks { display: grid; gap: 0.35rem; align-content: start; padding-top: 0.6rem; }
+	.footlinks a { text-decoration: none; }
+	.footlinks a:hover { text-decoration: underline; }
+	.tiny { padding-bottom: 1.5rem; font-size: 0.85rem; color: var(--muted); }
 </style>

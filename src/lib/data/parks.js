@@ -6,8 +6,8 @@ export const parks = [
 		town: 'TODO town, NC',
 		lotRent: 'TODO $/mo',
 		blurb: {
-			en: 'A quiet, established community with mature trees and easy access to town.',
-			es: 'Una comunidad tranquila y establecida, con árboles maduros y fácil acceso al pueblo.'
+			en: 'An established community with mature trees, minutes from town.',
+			es: 'Una comunidad establecida con árboles maduros, a minutos del pueblo.'
 		}
 	},
 	{
@@ -16,8 +16,8 @@ export const parks = [
 		town: 'TODO town, NC',
 		lotRent: 'TODO $/mo',
 		blurb: {
-			en: 'Family-friendly streets minutes from shopping and schools.',
-			es: 'Calles familiares a minutos de tiendas y escuelas.'
+			en: 'Quiet streets close to shopping and schools.',
+			es: 'Calles tranquilas cerca de tiendas y escuelas.'
 		}
 	},
 	{
@@ -26,8 +26,8 @@ export const parks = [
 		town: 'TODO town, NC',
 		lotRent: 'TODO $/mo',
 		blurb: {
-			en: 'A small community with a country feel and friendly neighbors.',
-			es: 'Una comunidad pequeña con ambiente de campo y vecinos amables.'
+			en: 'A small community with a country setting.',
+			es: 'Una comunidad pequeña en un entorno de campo.'
 		}
 	},
 	{
@@ -36,8 +36,8 @@ export const parks = [
 		town: 'Belmont, NC',
 		lotRent: 'TODO $/mo',
 		blurb: {
-			en: 'Close to downtown Belmont — shops, dining, and the river greenway.',
-			es: 'Cerca del centro de Belmont: tiendas, restaurantes y el sendero del río.'
+			en: 'Close to downtown Belmont shops, dining, and the greenway.',
+			es: 'Cerca del centro de Belmont: tiendas, restaurantes y el sendero.'
 		}
 	}
 ];
