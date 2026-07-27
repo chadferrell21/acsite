@@ -38,13 +38,12 @@
 					{t('with your name and phone number, and we will follow up with next steps.',
 						'con su nombre y número de teléfono, y le responderemos con los siguientes pasos.')}
 				</p>
+				<p style="margin:0">
+					<a href="/lease">{t('Lease agreement (fillable PDF)', 'Contrato de renta (PDF)')}</a>
+					— {t('fill it out and email it to us before your meeting.',
+						'complételo y envíenoslo por correo antes de su cita.')}
+				</p>
 			</div>
 		{/if}
-		<div class="card" style="margin-top:1rem">
-			<p style="margin:0">
-				{t('Already approved?', '¿Ya aprobado?')}
-				<a href="/lease">{t('Fill out the lease ahead of time', 'Complete el contrato con anticipación')}</a>.
-			</p>
-		</div>
 	</div>
 </section>

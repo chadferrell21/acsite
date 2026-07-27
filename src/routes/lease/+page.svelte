@@ -23,9 +23,11 @@
 		</p>
 		<div class="card">
 			<p style="margin:0">
-				<strong>{t('Important', 'Importante')}:</strong>
-				{t('For your security, please do not email the completed lease — it contains sensitive information. Bring it with you to signing, or fill it out together with us in person.',
-					'Por su seguridad, no envíe el contrato completado por correo electrónico — contiene información sensible. Tráigalo a la firma, o complételo con nosotros en persona.')}
+				{t('After filling it out, please email the completed lease to',
+					'Después de completarlo, envíe el contrato por correo a')}
+				<a href="mailto:{site.email}?subject=[LEASE]">{site.email}</a>
+				{t('before your meeting so we can have everything ready for signing.',
+					'antes de su cita para que todo esté listo para la firma.')}
 			</p>
 		</div>
 		<p style="margin-top:1rem">
