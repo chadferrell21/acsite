@@ -53,6 +53,7 @@
 			<a href="/apply">{t('Rental application', 'Solicitud de renta')}</a>
 			<a href="/maintenance">{t('Maintenance requests', 'Solicitudes de mantenimiento')}</a>
 			<a href="/news">{t('Community news', 'Avisos de la comunidad')}</a>
+			<a href="/lease">{t('Lease agreement', 'Contrato de renta')}</a>
 			<a href="/privacy">{t('Privacy', 'Privacidad')}</a>
 		</div>
 	</div>

@@ -40,5 +40,11 @@
 				</p>
 			</div>
 		{/if}
+		<div class="card" style="margin-top:1rem">
+			<p style="margin:0">
+				{t('Already approved?', '¿Ya aprobado?')}
+				<a href="/lease">{t('Fill out the lease ahead of time', 'Complete el contrato con anticipación')}</a>.
+			</p>
+		</div>
 	</div>
 </section>
