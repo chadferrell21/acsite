@@ -46,7 +46,10 @@
 			{#each featured as h}
 				<a class="card listing" href="/homes">
 					<strong>{h.title[$lang] ?? h.title.en}</strong>
-					<p>{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')} · {h.price}</p>
+					<p>
+						{#if h.beds}{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')} · {/if}
+						{h.price || (h.terms[$lang] ?? h.terms.en)}
+					</p>
 				</a>
 			{/each}
 		</div>

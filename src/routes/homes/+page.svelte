@@ -22,11 +22,13 @@
 				<div class="card">
 					<p class="eyebrow">{parkBySlug(h.park)?.name} · {t('Lot', 'Lote')} {h.lot}</p>
 					<strong>{h.title[$lang] ?? h.title.en}</strong>
-					<p>
-						{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')} ·
-						{h.sqft} {t('sq ft', 'pies²')}
-					</p>
-					<p><strong>{h.price}</strong> — {h.terms[$lang] ?? h.terms.en}</p>
+					{#if h.beds}
+						<p>
+							{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')}{#if h.sqft}
+								· {h.sqft} {t('sq ft', 'pies²')}{/if}
+						</p>
+					{/if}
+					<p><strong>{h.price}</strong>{#if h.price} — {/if}{h.terms[$lang] ?? h.terms.en}</p>
 					<a class="btn" href="/apply">{t('Apply for this home', 'Solicitar esta casa')}</a>
 				</div>
 			{/each}

@@ -35,7 +35,10 @@
 				{#each open as h}
 					<div class="card">
 						<strong>{h.title[$lang] ?? h.title.en}</strong>
-						<p>{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')} · {h.price}</p>
+						<p>
+							{#if h.beds}{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')} · {/if}
+							{h.price || (h.terms[$lang] ?? h.terms.en)}
+						</p>
 						<a class="btn" href="/apply">{t('Apply', 'Solicitar')}</a>
 					</div>
 				{/each}
