@@ -48,6 +48,7 @@
 			</p>
 		</div>
 		<div class="footlinks">
+			<a href="tel:{site.phones[0].replace(/-/g, '')}">{site.phones[0]}</a>
 			<a href="mailto:{site.email}">{site.email}</a>
 			<a href="/apply">{t('Rental application', 'Solicitud de renta')}</a>
 			<a href="/maintenance">{t('Maintenance requests', 'Solicitudes de mantenimiento')}</a>
