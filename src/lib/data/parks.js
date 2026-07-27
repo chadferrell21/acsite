@@ -1,6 +1,9 @@
 export const parks = [
 	{
 		slug: 'haven',
+		address: '560 Old Willis School Rd, Dallas, NC 28034',
+		// TODO-REFINE: right-click park entrance in Google Maps -> copy coords
+		lat: 35.3166, lng: -81.1762,
 		name: 'Haven',
 		town: 'Dallas, NC',
 		lotRent: {
@@ -14,6 +17,9 @@ export const parks = [
 	},
 	{
 		slug: 'forest-hills',
+		address: '102 Lutz Dr, Dallas, NC 28034',
+		// TODO-REFINE: right-click park entrance in Google Maps -> copy coords
+		lat: 35.32, lng: -81.17,
 		name: 'Forest Hills',
 		town: 'Dallas, NC',
 		lotRent: {
@@ -27,6 +33,9 @@ export const parks = [
 	},
 	{
 		slug: 'sherrill',
+		address: '111 Sherrill, Stanley, NC 28164',
+		// TODO-REFINE: right-click park entrance in Google Maps -> copy coords
+		lat: 35.3593, lng: -81.0951,
 		name: 'Sherrill',
 		town: 'Stanley, NC',
 		lotRent: {
@@ -40,6 +49,9 @@ export const parks = [
 	},
 	{
 		slug: 'belmont',
+		address: '2 Dillon Dr, Belmont, NC 28012',
+		// TODO-REFINE: right-click park entrance in Google Maps -> copy coords
+		lat: 35.2429, lng: -81.0373,
 		name: 'Belmont',
 		town: 'Belmont, NC',
 		lotRent: {
