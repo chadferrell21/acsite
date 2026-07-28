@@ -32,10 +32,10 @@
 			</p>
 		</div>
 		<svg class="heroscene" viewBox="0 0 1400 420" aria-hidden="true">
-			<path d="M-10 360 C 400 402 920 356 1292 229" fill="none"
-				stroke="#14509e" stroke-width="16" stroke-linecap="round" />
-			<path d="M-10 386 C 420 428 960 390 1300 260" fill="none"
-				stroke="#24262a" stroke-width="8" stroke-linecap="round" opacity="0.85" />
+			<path d="M-20 340 C 300 398 640 380 940 300 S 1180 245 1255 228" fill="none"
+				stroke="#14509e" stroke-width="15" stroke-linecap="round" />
+			<path d="M-20 366 C 310 424 660 404 950 322 S 1195 268 1268 250" fill="none"
+				stroke="#24262a" stroke-width="7" stroke-linecap="round" opacity="0.85" />
 			<image href="/ac-logo.png" x="896" y="0" width="504" height="420" />
 		</svg>
 	</div>
@@ -87,7 +87,6 @@
 		height: auto;
 		display: block;
 		margin-top: -1.5rem;
-		filter: drop-shadow(0 3px 10px rgba(20, 80, 158, 0.10));
 	}
 
 	.lede { font-size: 1.18rem; max-width: 34rem; color: var(--muted); }
