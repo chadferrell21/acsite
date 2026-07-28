@@ -31,14 +31,15 @@
 				<a class="btn gold" href="/apply" style="margin-left:0.55rem">{t('Apply', 'Solicitar')}</a>
 			</p>
 		</div>
-		<img class="herologo" src="/ac-logo.png" alt="" />
+		<svg class="heroscene" viewBox="0 0 1400 420" aria-hidden="true">
+			<path d="M-10 360 C 400 402 920 356 1292 229" fill="none"
+				stroke="#14509e" stroke-width="16" stroke-linecap="round" />
+			<path d="M-10 386 C 420 428 960 390 1300 260" fill="none"
+				stroke="#24262a" stroke-width="8" stroke-linecap="round" opacity="0.85" />
+			<image href="/ac-logo.png" x="896" y="0" width="504" height="420" />
+		</svg>
 	</div>
-	<svg class="heroribbon" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
-		<path d="M-10 182 C420 198 760 182 1035 11" fill="none" stroke="#14509e"
-			stroke-width="10" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-		<path d="M-10 194 C430 208 790 196 1060 26" fill="none" stroke="#24262a"
-			stroke-width="5" stroke-linecap="round" opacity="0.85" vector-effect="non-scaling-stroke" />
-	</svg>
+
 </section>
 
 <section>
@@ -77,30 +78,18 @@
 	.hero { position: relative; background: linear-gradient(175deg, var(--sky) 0%, var(--paper) 90%); padding: 3.2rem 0 0; overflow: hidden; }
 	.herogrid {
 		display: grid;
-		grid-template-columns: 1fr auto;
-		align-items: end;
-		gap: 2rem;
-		padding-bottom: 3.6rem;
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+		padding-bottom: 1.2rem;
 	}
-	.heroribbon {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
+	.heroscene {
 		width: 100%;
-		height: 12rem;
-		z-index: 1;
-		pointer-events: none;
+		height: auto;
+		display: block;
+		margin-top: -1.5rem;
+		filter: drop-shadow(0 3px 10px rgba(20, 80, 158, 0.10));
 	}
-	@media (max-width: 46rem) { .heroribbon { display: none; } }
-	.herologo {
-		height: 17rem;
-		width: auto;
-		position: relative;
-		z-index: 2;
-		filter: drop-shadow(0 3px 10px rgba(20, 80, 158, 0.14));
-	}
-	@media (max-width: 46rem) { .herologo { display: none; } }
+
 	.lede { font-size: 1.18rem; max-width: 34rem; color: var(--muted); }
 	.listing, .card { text-decoration: none; color: inherit; display: block; }
 </style>
