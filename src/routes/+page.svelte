@@ -32,9 +32,9 @@
 			</p>
 		</div>
 		<svg class="heroscene" viewBox="0 0 1400 420" aria-hidden="true">
-			<path d="M-20 340 C 300 398 640 380 940 300 S 1180 245 1255 228" fill="none"
+			<path d="M-20 340 C 300 396 630 372 840 298 S 962 216 1000 191" fill="none"
 				stroke="#14509e" stroke-width="15" stroke-linecap="round" />
-			<path d="M-20 366 C 310 424 660 404 950 322 S 1195 268 1268 250" fill="none"
+			<path d="M-20 366 C 310 420 650 396 850 322 S 970 310 1002 296" fill="none"
 				stroke="#24262a" stroke-width="7" stroke-linecap="round" opacity="0.85" />
 			<image href="/ac-logo.png" x="896" y="0" width="504" height="420" />
 		</svg>
