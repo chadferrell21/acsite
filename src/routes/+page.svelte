@@ -33,9 +33,11 @@
 		</div>
 		<img class="herologo" src="/ac-logo.png" alt="" />
 	</div>
-	<svg class="swoosh" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
-		<path d="M0 46 C320 62 720 42 1200 8" fill="none" stroke="#14509e" stroke-width="10" stroke-linecap="round" />
-		<path d="M0 58 C340 74 760 56 1200 24" fill="none" stroke="#24262a" stroke-width="5" stroke-linecap="round" opacity="0.85" />
+	<svg class="heroribbon" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+		<path d="M-10 182 C420 198 760 182 1035 11" fill="none" stroke="#14509e"
+			stroke-width="10" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+		<path d="M-10 194 C430 208 790 196 1060 26" fill="none" stroke="#24262a"
+			stroke-width="5" stroke-linecap="round" opacity="0.85" vector-effect="non-scaling-stroke" />
 	</svg>
 </section>
 
@@ -72,20 +74,30 @@
 </section>
 
 <style>
-	.hero { background: linear-gradient(175deg, var(--sky) 0%, var(--paper) 90%); padding: 3.2rem 0 0; }
+	.hero { position: relative; background: linear-gradient(175deg, var(--sky) 0%, var(--paper) 90%); padding: 3.2rem 0 0; overflow: hidden; }
 	.herogrid {
 		display: grid;
 		grid-template-columns: 1fr auto;
 		align-items: end;
 		gap: 2rem;
-		padding-bottom: 0.4rem;
+		padding-bottom: 3.6rem;
 	}
+	.heroribbon {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 12rem;
+		z-index: 1;
+		pointer-events: none;
+	}
+	@media (max-width: 46rem) { .heroribbon { display: none; } }
 	.herologo {
 		height: 17rem;
 		width: auto;
 		position: relative;
 		z-index: 2;
-		margin-bottom: -3.1rem;
 		filter: drop-shadow(0 3px 10px rgba(20, 80, 158, 0.14));
 	}
 	@media (max-width: 46rem) { .herologo { display: none; } }
