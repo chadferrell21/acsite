@@ -34,8 +34,8 @@
 		<img class="herologo" src="/ac-logo.png" alt="" />
 	</div>
 	<svg class="swoosh" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
-		<path d="M0 22 C340 54 620 2 1200 40" fill="none" stroke="#14509e" stroke-width="10" stroke-linecap="round" />
-		<path d="M0 40 C360 70 660 20 1200 54" fill="none" stroke="#24262a" stroke-width="5" stroke-linecap="round" opacity="0.85" />
+		<path d="M0 46 C320 62 720 42 1200 8" fill="none" stroke="#14509e" stroke-width="10" stroke-linecap="round" />
+		<path d="M0 58 C340 74 760 56 1200 24" fill="none" stroke="#24262a" stroke-width="5" stroke-linecap="round" opacity="0.85" />
 	</svg>
 </section>
 
@@ -76,11 +76,18 @@
 	.herogrid {
 		display: grid;
 		grid-template-columns: 1fr auto;
-		align-items: center;
+		align-items: end;
 		gap: 2rem;
-		padding-bottom: 1.6rem;
+		padding-bottom: 0.4rem;
 	}
-	.herologo { height: 12rem; width: auto; }
+	.herologo {
+		height: 17rem;
+		width: auto;
+		position: relative;
+		z-index: 2;
+		margin-bottom: -3.1rem;
+		filter: drop-shadow(0 3px 10px rgba(20, 80, 158, 0.14));
+	}
 	@media (max-width: 46rem) { .herologo { display: none; } }
 	.lede { font-size: 1.18rem; max-width: 34rem; color: var(--muted); }
 	.listing, .card { text-decoration: none; color: inherit; display: block; }
