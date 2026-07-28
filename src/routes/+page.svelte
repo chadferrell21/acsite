@@ -32,10 +32,12 @@
 			</p>
 		</div>
 		<svg class="heroscene" viewBox="0 0 1400 420" aria-hidden="true">
-			<path d="M-20 340 C 300 396 630 372 840 298 S 962 216 1000 191" fill="none"
-				stroke="#14509e" stroke-width="15" stroke-linecap="round" />
-			<path d="M-20 366 C 310 420 650 396 850 322 S 970 310 1002 296" fill="none"
-				stroke="#24262a" stroke-width="7" stroke-linecap="round" opacity="0.85" />
+			<path d="M-30 322 C 300 372 640 350 842 286 C 930 258 972 220 998 191
+				C 964 228 906 274 848 306 C 656 390 310 414 -30 366 Z"
+				fill="#14509e" />
+			<path d="M-30 356 C 310 408 656 388 852 320 C 940 292 978 306 1002 296
+				C 970 318 908 340 854 336 C 660 404 320 428 -30 376 Z"
+				fill="#24262a" opacity="0.85" />
 			<image href="/ac-logo.png" x="896" y="0" width="504" height="420" />
 		</svg>
 	</div>
