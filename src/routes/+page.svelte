@@ -31,13 +31,7 @@
 				<a class="btn gold" href="/apply" style="margin-left:0.55rem">{t('Apply', 'Solicitar')}</a>
 			</p>
 		</div>
-		<svg class="heroscene" viewBox="0 0 1400 420" aria-hidden="true">
-			<path d="M-20 340 C 300 396 630 372 840 298 S 962 216 1000 191" fill="none"
-				stroke="#14509e" stroke-width="15" stroke-linecap="round" />
-			<path d="M-20 366 C 310 420 650 396 850 322 S 970 310 1002 296" fill="none"
-				stroke="#24262a" stroke-width="7" stroke-linecap="round" opacity="0.85" />
-			<image href="/ac-logo.png" x="896" y="0" width="504" height="420" />
-		</svg>
+		<img class="herologo" src="/ac-logo.png" alt="AC Investment Properties" />
 	</div>
 
 </section>
@@ -80,15 +74,14 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 0.5rem;
-		padding-bottom: 1.2rem;
+		padding-bottom: 1.4rem;
 	}
-	.heroscene {
+	.herologo {
 		width: 100%;
+		max-width: 60rem;
 		height: auto;
 		display: block;
-		margin-top: -1.5rem;
+		margin: 0.5rem auto -1rem;
 	}
-
-	.lede { font-size: 1.18rem; max-width: 34rem; color: var(--muted); }
 	.listing, .card { text-decoration: none; color: inherit; display: block; }
 </style>
