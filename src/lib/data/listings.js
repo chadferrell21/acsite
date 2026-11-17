@@ -5,46 +5,6 @@
 // first photo is the cover.
 export const listings = [
 	{
-		id: 'H109',
-		park: 'haven',
-		lot: '109',
-		beds: 3, baths: 2, sqft: null,
-		price: '$1,200/mo',
-		terms: { en: 'For rent', es: 'En renta' },
-		title: { en: '3 bed / 2 bath home', es: 'Casa de 3 hab / 2 baños' },
-		photos: []
-	},
-	{
-		id: 'FH205',
-		park: 'forest-hills',
-		lot: '205',
-		beds: 3, baths: 2, sqft: null,
-		price: '$1,200/mo',
-		terms: { en: 'For rent', es: 'En renta' },
-		title: { en: '3 bed / 2 bath home', es: 'Casa de 3 hab / 2 baños' },
-		photos: []
-	},
-	{
-		id: 'B9',
-		park: 'belmont',
-		lot: '9',
-		beds: 2, baths: 2, sqft: null,
-		price: '$1,100/mo',
-		terms: { en: 'For rent', es: 'En renta' },
-		title: { en: '2 bed / 2 bath home', es: 'Casa de 2 hab / 2 baños' },
-		photos: []
-	},
-	{
-		id: 'B25',
-		park: 'belmont',
-		lot: '25',
-		beds: 2, baths: 1, sqft: null,
-		price: '$1,000/mo',
-		terms: { en: 'For rent', es: 'En renta' },
-		title: { en: '2 bed / 1 bath home', es: 'Casa de 2 hab / 1 baño' },
-		photos: []
-	},
-	{
 		id: 'FH108',
 		park: 'forest-hills',
 		lot: '108',
@@ -72,6 +32,43 @@ export const listings = [
 		]
 	},
 	{
+		id: 'H211',
+		park: 'haven',
+		lot: '211',
+		beds: null, baths: null, sqft: null,
+		price: '',
+		terms: { en: 'Available — ask for details', es: 'Disponible — pida detalles' },
+		address: '211 Hogan Rd, Dallas, NC 28034',
+		title: { en: 'Home at 211 Hogan Rd', es: 'Casa en 211 Hogan Rd' },
+		photos: []
+	},
+	{
+		id: 'FH135',
+		park: 'forest-hills',
+		lot: '135',
+		beds: null, baths: null, sqft: null,
+		price: '',
+		terms: { en: 'Coming soon', es: 'Próximamente' },
+		title: {
+			en: 'Home under construction — 135 Lutz Dr',
+			es: 'Casa en construcción — 135 Lutz Dr'
+		},
+		photos: []
+	},
+	{
+		id: 'FH133',
+		park: 'forest-hills',
+		lot: '133',
+		beds: null, baths: null, sqft: null,
+		price: '',
+		terms: { en: 'Coming soon', es: 'Próximamente' },
+		title: {
+			en: 'Finished home, photos coming soon — 133 Lutz Dr',
+			es: 'Casa terminada, fotos próximamente — 133 Lutz Dr'
+		},
+		photos: []
+	},
+	{
 		id: 'FH208',
 		park: 'forest-hills',
 		lot: '208',
@@ -79,17 +76,13 @@ export const listings = [
 		price: '',
 		terms: { en: 'Coming soon', es: 'Próximamente' },
 		title: {
-			en: 'New home under construction — 208 Lutz Dr',
-			es: 'Casa nueva en construcción — 208 Lutz Dr'
+			en: 'Home under construction — 208 Lutz Dr',
+			es: 'Casa en construcción — 208 Lutz Dr'
 		},
 		photos: []
 	}
-	// PENDING — activate when bed/bath confirmed:
-	// { id: 'B2',   park: 'belmont', lot: '2',   ... },
-	// { id: 'H304', park: 'haven',   lot: '304', ... },
-	// { id: 'H550', park: 'haven',   lot: '550', ... },  // 550 Old Willis School Rd
-	// { id: 'H560', park: 'haven',   lot: '560', ... },
-	// { id: 'H566', park: 'haven',   lot: '566', ... },
+	// Removed 2026-11-17 at the owner's direction (no longer listed):
+	// H109, FH205, B9, B25.
 ];
 
 export const listingById = (id) => listings.find((h) => h.id === id);
