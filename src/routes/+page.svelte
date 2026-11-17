@@ -1,9 +1,13 @@
 <script>
 	import { lang, pickFactory } from '$lib/i18n.js';
 	import { parks } from '$lib/data/parks.js';
-	import { listings } from '$lib/data/listings.js';
+	import { listings, photoSmall } from '$lib/data/listings.js';
 	let t = $derived(pickFactory($lang));
-	const featured = listings.slice(0, 3);
+	// Homes that have photos lead; the rest keep their listed order.
+	const featured = [
+		...listings.filter((h) => h.photos.length),
+		...listings.filter((h) => !h.photos.length)
+	].slice(0, 3);
 </script>
 
 <svelte:head>
@@ -41,7 +45,13 @@
 		<h2 class="board">{t('Available now', 'Disponibles ahora')}</h2>
 		<div class="grid">
 			{#each featured as h}
-				<a class="card listing" href="/homes">
+				<a class="card listing" href={h.photos.length ? '/homes/' + h.id : '/homes'}>
+					{#if h.photos.length}
+						<span class="cover">
+							<img src={photoSmall(h.photos[0])} loading="lazy"
+								alt={h.photos[0][$lang] ?? h.photos[0].en} />
+						</span>
+					{/if}
 					<strong>{h.title[$lang] ?? h.title.en}</strong>
 					<p>
 						{#if h.beds}{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')} · {/if}
@@ -84,4 +94,13 @@
 		margin: 0.5rem auto -1rem;
 	}
 	.listing, .card { text-decoration: none; color: inherit; display: block; }
+	.cover {
+		display: block;
+		margin: -1.15rem -1.25rem 0.9rem;
+		border-radius: 0.9rem 0.9rem 0 0;
+		overflow: hidden;
+		aspect-ratio: 4 / 3;
+		background: var(--sky);
+	}
+	.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 </style>

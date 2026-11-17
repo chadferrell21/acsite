@@ -1,6 +1,6 @@
 <script>
 	import { lang, pickFactory } from '$lib/i18n.js';
-	import { listings } from '$lib/data/listings.js';
+	import { listings, photoSmall } from '$lib/data/listings.js';
 	import { news } from '$lib/data/news.js';
 	let { data } = $props();
 	let t = $derived(pickFactory($lang));
@@ -34,6 +34,12 @@
 			<div class="grid">
 				{#each open as h}
 					<div class="card">
+						{#if h.photos.length}
+							<a class="cover" href={'/homes/' + h.id}>
+								<img src={photoSmall(h.photos[0])} loading="lazy"
+									alt={h.photos[0][$lang] ?? h.photos[0].en} />
+							</a>
+						{/if}
 						<strong>{h.title[$lang] ?? h.title.en}</strong>
 						<p>
 							{#if h.beds}{h.beds} {t('bed', 'hab')} · {h.baths} {t('bath', 'baños')} · {/if}
@@ -56,3 +62,15 @@
 		<p><a href="/news">{t('All news →', 'Todos los avisos →')}</a></p>
 	</div>
 </section>
+
+<style>
+	.cover {
+		display: block;
+		margin: -1.15rem -1.25rem 0.9rem;
+		border-radius: 0.9rem 0.9rem 0 0;
+		overflow: hidden;
+		aspect-ratio: 4 / 3;
+		background: var(--sky);
+	}
+	.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>

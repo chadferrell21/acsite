@@ -1,6 +1,8 @@
 // One entry per available home. Prices by type: 2/1=$1,000, 2/2=$1,100,
-// 3/2=$1,200 — lot rent included. Photos: files in static/photos/,
-// filenames listed per home.
+// 3/2=$1,200 — lot rent included (108 Lutz Dr, renovated: $1,400).
+// Photos: static/photos/<home>/NAME.jpg (large) and NAME-sm.jpg (small),
+// listed per home as { f: '<home>/NAME', en: '...', es: '...' }; the
+// first photo is the cover.
 export const listings = [
 	{
 		id: 'H109',
@@ -46,14 +48,28 @@ export const listings = [
 		id: 'FH108',
 		park: 'forest-hills',
 		lot: '108',
-		beds: null, baths: null, sqft: null,
-		price: '',
-		terms: { en: 'Coming soon', es: 'Próximamente' },
+		address: '108 Lutz Dr, Dallas, NC 28034',
+		beds: 3, baths: 2, sqft: null,
+		price: '$1,400/mo',
+		terms: { en: 'For rent', es: 'En renta' },
 		title: {
-			en: 'New home under construction — 108 Lutz Dr',
-			es: 'Casa nueva en construcción — 108 Lutz Dr'
+			en: 'Renovated 3 bed / 2 bath home — 108 Lutz Dr',
+			es: 'Casa renovada de 3 hab / 2 baños — 108 Lutz Dr'
 		},
-		photos: []
+		photos: [
+			{ f: 'fh108/01-front', en: 'Front of the home with new deck and steps', es: 'Frente de la casa con terraza y escalones nuevos' },
+			{ f: 'fh108/02-front-deck', en: 'Front deck and landscaping', es: 'Terraza del frente y jardín' },
+			{ f: 'fh108/03-living-kitchen', en: 'Open living room and kitchen', es: 'Sala y cocina de concepto abierto' },
+			{ f: 'fh108/04-living-kitchen-2', en: 'Living room looking toward the kitchen', es: 'Sala con vista a la cocina' },
+			{ f: 'fh108/05-kitchen', en: 'Kitchen with island and new cabinets', es: 'Cocina con isla y gabinetes nuevos' },
+			{ f: 'fh108/06-bedroom-1', en: 'Bedroom', es: 'Habitación' },
+			{ f: 'fh108/07-bedroom-2', en: 'Bedroom', es: 'Habitación' },
+			{ f: 'fh108/08-bedroom-3', en: 'Bedroom', es: 'Habitación' },
+			{ f: 'fh108/09-bath-1-vanity', en: 'Bathroom vanity', es: 'Tocador del baño' },
+			{ f: 'fh108/10-bath-1-tub', en: 'Bathroom with tub and shower', es: 'Baño con tina y regadera' },
+			{ f: 'fh108/11-bath-2', en: 'Second bathroom with walk-in shower', es: 'Segundo baño con regadera' },
+			{ f: 'fh108/12-hall', en: 'Hallway', es: 'Pasillo' }
+		]
 	},
 	{
 		id: 'FH208',
@@ -75,3 +91,7 @@ export const listings = [
 	// { id: 'H560', park: 'haven',   lot: '560', ... },
 	// { id: 'H566', park: 'haven',   lot: '566', ... },
 ];
+
+export const listingById = (id) => listings.find((h) => h.id === id);
+export const photoLarge = (p) => `/photos/${p.f}.jpg`;
+export const photoSmall = (p) => `/photos/${p.f}-sm.jpg`;

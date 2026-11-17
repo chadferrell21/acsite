@@ -1,12 +1,15 @@
 <script>
 	import { browser } from '$app/environment';
 	import { lang, pickFactory } from '$lib/i18n.js';
-	import { listings } from '$lib/data/listings.js';
+	import { listings, photoSmall } from '$lib/data/listings.js';
 	import { parks, parkBySlug } from '$lib/data/parks.js';
 	let t = $derived(pickFactory($lang));
 	let filter = $state('all');
+	// Homes with photos are shown first; the rest keep their listed order.
 	let shown = $derived(
-		listings.filter((h) => filter === 'all' || h.park === filter)
+		listings
+			.filter((h) => filter === 'all' || h.park === filter)
+			.toSorted((a, b) => (b.photos.length > 0) - (a.photos.length > 0))
 	);
 	let mapEl;
 	$effect(() => {
@@ -64,6 +67,13 @@
 		<div class="grid">
 			{#each shown as h}
 				<div class="card">
+					{#if h.photos.length}
+						<a class="cover" href={'/homes/' + h.id}>
+							<img src={photoSmall(h.photos[0])} loading="lazy"
+								alt={h.photos[0][$lang] ?? h.photos[0].en} />
+							<span class="count">{h.photos.length} {t('photos', 'fotos')}</span>
+						</a>
+					{/if}
 					<p class="eyebrow">{parkBySlug(h.park)?.name} · {t('Lot', 'Lote')} {h.lot}</p>
 					<strong>{h.title[$lang] ?? h.title.en}</strong>
 					{#if h.beds}
@@ -73,6 +83,9 @@
 						</p>
 					{/if}
 					<p><strong>{h.price}</strong>{#if h.price} — {/if}{h.terms[$lang] ?? h.terms.en}</p>
+					{#if h.photos.length}
+						<p><a href={'/homes/' + h.id}>{t('See all photos →', 'Ver todas las fotos →')}</a></p>
+					{/if}
 					<a class="btn" href="/apply">{t('Apply for this home', 'Solicitar esta casa')}</a>
 				</div>
 			{/each}
@@ -84,6 +97,27 @@
 </section>
 
 <style>
+	.cover {
+		position: relative;
+		display: block;
+		margin: -1.15rem -1.25rem 0.9rem;
+		border-radius: 0.9rem 0.9rem 0 0;
+		overflow: hidden;
+		aspect-ratio: 4 / 3;
+		background: var(--sky);
+	}
+	.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+	.count {
+		position: absolute;
+		right: 0.6rem;
+		bottom: 0.6rem;
+		background: rgba(36, 38, 42, 0.82);
+		color: #fff;
+		font-size: 0.8rem;
+		font-weight: 600;
+		padding: 0.15rem 0.6rem;
+		border-radius: 1rem;
+	}
 	.mapbox {
 		height: 24rem;
 		border: 1px solid var(--line);
