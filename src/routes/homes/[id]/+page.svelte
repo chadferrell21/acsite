@@ -1,4 +1,5 @@
 <script>
+	import Share from '$lib/Share.svelte';
 	import { lang, pickFactory } from '$lib/i18n.js';
 	import { photoLarge, photoSmall } from '$lib/data/listings.js';
 	import { parkBySlug } from '$lib/data/parks.js';
@@ -38,10 +39,13 @@
 		name="description"
 		content="{home.title.en}{home.price ? ', ' + home.price : ''} in {park?.name}, {park?.town}. Photos and how to apply."
 	/>
-	{#if photos.length}
-		<meta property="og:image" content={photoLarge(photos[0])} />
-	{/if}
 </svelte:head>
+<Share
+	path="/homes/{home.id}"
+	title={home.title.en}
+	description="{home.title.en}{home.price ? ', ' + home.price : ''} in {park?.name}, {park?.town}. Photos and how to apply."
+	image={photos.length ? photoLarge(photos[0]) : '/ac-logo.png'}
+/>
 
 <section>
 	<div class="wrap">

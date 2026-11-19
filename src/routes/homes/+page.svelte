@@ -1,4 +1,6 @@
 <script>
+	import Share from '$lib/Share.svelte';
+	import { photoLarge } from '$lib/data/listings.js';
 	import { browser } from '$app/environment';
 	import { lang, pickFactory } from '$lib/i18n.js';
 	import { listings, photoSmall } from '$lib/data/listings.js';
@@ -49,6 +51,12 @@
 	<title>Available Homes — AC Investment Properties, Gaston County NC</title>
 	<meta name="description" content="Current homes for rent in our Gaston County communities — Dallas, Stanley, and Belmont NC." />
 </svelte:head>
+<Share
+	path="/homes"
+	title="Available Homes in Gaston County, NC"
+	description="Current homes for rent in our Gaston County communities — Dallas, Stanley, and Belmont NC."
+	image={listings.find((h) => h.photos.length) ? photoLarge(listings.find((h) => h.photos.length).photos[0]) : '/ac-logo.png'}
+/>
 
 <section>
 	<div class="wrap">

@@ -1,6 +1,7 @@
 <script>
 	import { lang, pickFactory } from '$lib/i18n.js';
-	import { listings, photoSmall } from '$lib/data/listings.js';
+	import { listings, photoSmall, photoLarge } from '$lib/data/listings.js';
+	import Share from '$lib/Share.svelte';
 	import { news } from '$lib/data/news.js';
 	let { data } = $props();
 	let t = $derived(pickFactory($lang));
@@ -18,6 +19,12 @@
 		content="{park.name} manufactured home community in {park.town}. See available homes and community news."
 	/>
 </svelte:head>
+<Share
+	path="/parks/{park.slug}"
+	title="{park.name} Mobile Home Community — {park.town}"
+	description="{park.name} manufactured home community in {park.town}. See available homes and community news."
+	image={open.find((h) => h.photos.length) ? photoLarge(open.find((h) => h.photos.length).photos[0]) : '/ac-logo.png'}
+/>
 
 <section>
 	<div class="wrap">

@@ -1,7 +1,8 @@
 <script>
 	import { lang, pickFactory } from '$lib/i18n.js';
 	import { parks } from '$lib/data/parks.js';
-	import { listings, photoSmall } from '$lib/data/listings.js';
+	import { listings, photoSmall, photoLarge } from '$lib/data/listings.js';
+	import Share from '$lib/Share.svelte';
 	let t = $derived(pickFactory($lang));
 	// Homes that have photos lead; the rest keep their listed order.
 	const featured = [
@@ -17,6 +18,12 @@
 		content="Homes for rent in four communities near Belmont and Gastonia, NC. See current rentals and apply online."
 	/>
 </svelte:head>
+<Share
+	path="/"
+	title="Mobile Homes for Rent in Gaston County, NC"
+	description="Homes for rent in four communities near Belmont and Gastonia, NC. See current rentals and apply online."
+	image={featured[0]?.photos.length ? photoLarge(featured[0].photos[0]) : '/ac-logo.png'}
+/>
 
 <section class="hero">
 	<div class="wrap herogrid">

@@ -61,12 +61,22 @@ export const listings = [
 		lot: '133',
 		beds: null, baths: null, sqft: null,
 		price: '',
-		terms: { en: 'Coming soon', es: 'Próximamente' },
-		title: {
-			en: 'Finished home, photos coming soon — 133 Lutz Dr',
-			es: 'Casa terminada, fotos próximamente — 133 Lutz Dr'
-		},
-		photos: []
+		address: '133 Lutz Dr, Dallas, NC 28034',
+		terms: { en: 'Available — ask for details', es: 'Disponible — pida detalles' },
+		title: { en: 'Home at 133 Lutz Dr', es: 'Casa en 133 Lutz Dr' },
+		photos: [
+			{ f: 'fh133/01-front', en: 'Front of the home', es: 'Frente de la casa' },
+			{ f: 'fh133/02-living-room', en: 'Living room, open to the kitchen', es: 'Sala abierta a la cocina' },
+			{ f: 'fh133/03-living-hall', en: 'Living room and hallway', es: 'Sala y pasillo' },
+			{ f: 'fh133/04-kitchen', en: 'Kitchen with island, stove and refrigerator', es: 'Cocina con isla, estufa y refrigerador' },
+			{ f: 'fh133/05-kitchen-living', en: 'Kitchen looking toward the living room', es: 'Cocina con vista a la sala' },
+			{ f: 'fh133/06-bedroom-1', en: 'Main bedroom with ceiling fan', es: 'Habitación principal con ventilador de techo' },
+			{ f: 'fh133/07-bath-1-vanity', en: 'Main bathroom vanity', es: 'Tocador del baño principal' },
+			{ f: 'fh133/08-walk-in-closet', en: 'Walk-in closet', es: 'Vestidor' },
+			{ f: 'fh133/09-bedroom-2', en: 'Bedroom', es: 'Habitación' },
+			{ f: 'fh133/10-bedroom-3', en: 'Bedroom', es: 'Habitación' },
+			{ f: 'fh133/11-bath-2', en: 'Bathroom with tub and shower', es: 'Baño con tina y regadera' }
+		]
 	},
 	{
 		id: 'FH208',
